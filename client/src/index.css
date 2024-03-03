@@ -1,0 +1,15 @@
+:root {
+  --bg-main: #ffffff;
+  --bg-canvas: #fffef8;
+  --accent-main: rgb(236, 236, 236);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main);
+}
