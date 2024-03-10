@@ -23,6 +23,9 @@ export const Canvas = observer(() => {
         case "connection":
           console.log(`User: ${message.name} connected room`);
           break;
+        case "mouseMove":
+          
+          break;
         case "draw":
           drawHandler(message);
           break;
@@ -34,7 +37,7 @@ export const Canvas = observer(() => {
         params: { sessionId: wsState.sessionId },
       })
       .then((res) => {
-        if (res.data.message === 'file not exist') return;
+        if (res.data.message === "file not exist") return;
         const img = new Image();
         img.src = res.data.image;
         img.onload = () => {
@@ -80,12 +83,21 @@ export const Canvas = observer(() => {
     }
   };
 
+  function mouseMoveHandler(e) {
+    wsState.send({
+      method: "mouseMove",
+      mouseX: e.clientX,
+      mouseY: e.clientY,
+    });
+  }
+
   return (
     <div className={classes.container}>
       <canvas
         ref={canvasRef}
         width={1080}
         height={720}
+        onMouseMove={mouseMoveHandler}
         className={classes.canvas}
       ></canvas>
     </div>

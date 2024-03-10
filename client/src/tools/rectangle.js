@@ -37,6 +37,7 @@ export class Rectangle extends Tool {
         canvasState.ctx.rect(this.startX, this.startY, this.width, this.height)
         canvasState.ctx.fill()
         canvasState.ctx.stroke()
+        canvasState.ctx.beginPath()
     }
 
     static staticDraw({ startX, startY, width, height, fillStyle, strokeStyle, lineWidth }) {
@@ -47,6 +48,7 @@ export class Rectangle extends Tool {
             canvasState.ctx.rect(startX, startY, width, height)
             canvasState.ctx.fill()
             canvasState.ctx.stroke()
+            canvasState.ctx.beginPath()
         })
     }
 

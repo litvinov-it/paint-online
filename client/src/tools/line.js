@@ -31,6 +31,7 @@ export class Line extends Tool {
         canvasState.ctx.moveTo(this.startX, this.startY)
         canvasState.ctx.lineTo(this.endX, this.endY)
         canvasState.ctx.stroke()
+        canvasState.ctx.beginPath()
     }
 
     static staticDraw({ fillStyle, strokeStyle, lineWidth, startX, startY, endX, endY }) {
@@ -41,6 +42,7 @@ export class Line extends Tool {
             canvasState.ctx.moveTo(startX, startY)
             canvasState.ctx.lineTo(endX, endY)
             canvasState.ctx.stroke()
+            canvasState.ctx.beginPath()
         })
     }
 }

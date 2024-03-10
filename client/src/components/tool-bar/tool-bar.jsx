@@ -139,6 +139,7 @@ export const ToolBar = () => {
         {/* Иницализация всплывающих подсказок */}
         <Tooltip id="my-tooltip" />
       </div>
+      <div className={classes.btn}>ID комнаты: <span className={classes.copy} onClick={() => {navigator.clipboard.writeText(wsState.sessionId)}}>{wsState.sessionId }</span></div>
     </div>
   );
 };

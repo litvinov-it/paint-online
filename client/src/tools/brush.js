@@ -32,12 +32,12 @@ export class Brush extends Tool {
         canvasState.ctx.stroke()
     }
 
-    static staticDraw({fillStyle, strokeStyle, lineWidth, x, y}) {
+    static staticDraw({ fillStyle, strokeStyle, lineWidth, x, y }) {
         const settings = { lineWidth, fillStyle, strokeStyle }
 
         Tool.drawWithSetSettings(settings, () => {
             canvasState.ctx.lineTo(x, y)
-        canvasState.ctx.stroke()
+            canvasState.ctx.stroke()
         })
     }
 

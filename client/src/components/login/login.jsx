@@ -30,18 +30,18 @@ export const Login = () => {
   function connect(sessionId) {
     wsState.setSessionId(sessionId);
     wsState.send({
-      method: 'connection',
+      method: "connection",
       name: `${username}`,
     });
     navigate(`/${sessionId}`);
-  };
+  }
 
   return (
     <div className={classes.container}>
-
-      <h1>Login</h1>
+      <h1 className={classes.title}>Login</h1>
 
       <input
+        className={classes.input}
         type="text"
         placeholder="Имя"
         value={username}
@@ -49,20 +49,20 @@ export const Login = () => {
       />
 
       <div className={classes.login}>
-
         <input
+          className={classes.input}
           type="text"
           placeholder="Введи id комнаты"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
 
-        <button onClick={handleLogin}>Войти</button>
-
+        <button onClick={handleLogin} className={classes.btn}>Войти</button>
       </div>
 
-      <button className={classes.create} onClick={handleCreate}>Создать </button>
-
+      <button className={classes.create} onClick={handleCreate}>
+        Создать{" "}
+      </button>
     </div>
   );
 };

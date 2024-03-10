@@ -37,6 +37,7 @@ export class Circle extends Tool {
         canvasState.ctx.arc(this.startX, this.startY, this.radius, 0, 2 * Math.PI, false)
         canvasState.ctx.fill()
         canvasState.ctx.stroke()
+        canvasState.ctx.beginPath()
     }
 
     static staticDraw({ startX, startY, radius, fillStyle, strokeStyle, lineWidth }) {
@@ -47,6 +48,7 @@ export class Circle extends Tool {
             canvasState.ctx.arc(startX, startY, radius, 0, 2 * Math.PI, false)
             canvasState.ctx.fill()
             canvasState.ctx.stroke()
+            canvasState.ctx.beginPath()
         })
     }
 
